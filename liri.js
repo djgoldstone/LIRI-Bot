@@ -7,10 +7,15 @@ var Spotify = require('node-spotify-api');
 
 var spotify = new Spotify(keys.spotify);
 
-spotify.search({ type: "track", query: "All The Small Things" }).then(function(response) {
+spotify.search({ type: "track", query: "El Cuarto De Tula" }).then(function(response) {
     for (var i = 0; i < response.tracks.items.length; i++){
         var songData = response.tracks.items[i];
+        console.log("--------------------------------------------");
         console.log("The artist is: " + songData.artists[0].name);
+        console.log("The song title is: " + songData.name);
+        console.log("The album name is: " + songData.album.name);
+        console.log("This is a preview on Spotify: " + songData.preview_url);
+        console.log("--------------------------------------------");
     }
     // console.log(JSON.stringify(response, null, 2));
 }).catch(function(err) {
