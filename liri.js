@@ -21,7 +21,7 @@ switch (command) {
         if (args.length > 0) {
             spotifySongSearch(args);
         } else {
-            spotifySongSearch("The Sign");
+            spotifySongSearch("Ace of Base");
         }
     break;
     case ("movie-this"):
