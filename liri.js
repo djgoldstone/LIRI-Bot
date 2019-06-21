@@ -3,10 +3,12 @@ var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var fs = require("fs");
 var axios = require("axios");
+var moment = require("moment");
 //variables assigned to require for each package
 
 var spotify = new Spotify(keys.spotify);
 //variable assigned spotify keys
+
 
 var command = process.argv[2];
 var args = process.argv.slice(3);
@@ -18,6 +20,13 @@ switch (command) {
             spotifySongSearch(args);
         } else {
             spotifySongSearch("The Sign");
+        }
+    break;
+    case ("movie-this"):
+        if (args.length > 0) {
+            movieThis(args);
+        } else {
+            movieThis("Mr. Nobody");
         }
     break;
     case ("do-what-it-says"):
@@ -45,6 +54,37 @@ spotify.search({ type: "track", query: song, limit: 1 }).then(function(response)
 });
 };
 //function that takes an argument of song and searches spotify's api for the queried song title and returns the artist name, song title, album name, and a preview of the song on spotify
+
+function movieThis(movieTitle) {
+    axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&y=&plot=short&apikey=trilogy").then(
+  function(response) {
+    var movieJSON = response.data;
+    console.log("-----------------------");
+    console.log("Movie Title: " + movieJSON.Title);
+    console.log("Release Year: " + movieJSON.Year);
+    console.log("IMDB Rating: " + movieJSON.Ratings[0].Value);
+    console.log("Rotten Tomatoes Rating: " + movieJSON.Ratings[1].Value);
+    console.log("Country Produced: " + movieJSON.Country);
+    console.log("Language: " + movieJSON.Language);
+    console.log("-----------------------");
+  })
+  .catch(function(error) {
+    if (error.response) {
+      console.log("---------------Data---------------");
+      console.log(error.response.data);
+      console.log("---------------Status---------------");
+      console.log(error.response.status);
+      console.log("---------------Status---------------");
+      console.log(error.response.headers);
+    } else if (error.request) {
+      console.log(error.request);
+    } else {
+      console.log("Error", error.message);
+    }
+    console.log(error.config);
+  });
+
+};
 
 function doWhatItSays() {
     fs.readFile("random.txt", "utf8", function(error, data) {
