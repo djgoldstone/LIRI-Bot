@@ -36,6 +36,8 @@ switch (command) {
         console.log("Error: please try again...");
 }
 //switch statement that determines if a command has been issued and calls the corresponding function
+//Added a case to switch statement to account for movie-this command that takes in args as the argument to the movieThis function, if no arugment is provided it will default to Mr. Nobody.
+
 
 function spotifySongSearch(song) {
 spotify.search({ type: "track", query: song, limit: 1 }).then(function(response) {
@@ -66,6 +68,8 @@ function movieThis(movieTitle) {
     console.log("Rotten Tomatoes Rating: " + movieJSON.Ratings[1].Value);
     console.log("Country Produced: " + movieJSON.Country);
     console.log("Language: " + movieJSON.Language);
+    console.log("Plot: " + movieJSON.Plot);
+    console.log("Actors: " + movieJSON.Actors);
     console.log("-----------------------");
   })
   .catch(function(error) {
@@ -85,6 +89,7 @@ function movieThis(movieTitle) {
   });
 
 };
+//declared a function movieThis that takes in a movie title as an argument then uses axios to request a JSON object from omdb's API. The response data was then stored in a variable called movieJSON for easier accessing of keys. Then the keys corresponding to movie title, release year, imdb rating, rotten tomatoes rating, country, and language were logged to console. 
 
 function doWhatItSays() {
     fs.readFile("random.txt", "utf8", function(error, data) {
