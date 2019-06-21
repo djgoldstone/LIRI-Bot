@@ -21,11 +21,15 @@ ___
 * [Axios](https://github.com/axios/axios)
 
 ![Graph](assets/images/graph.png)
+![Commits](assets/images/commits.png)
 ___
 
-![LIRI Bot](assets/images/xxx-screenshot.png)
+![LIRI Bot - error](images/error-screenshot.png)
+![LIRI Bot - concert-this](images/concert-this-screenshot.png)
+![LIRI Bot - do-what-it-says](images/do-what-it-says-screenshot.png)
+![LIRI Bot - movie-this](images/movie-this-screenshot.png)
+![LIRI Bot - spotify-this-song](images/spotify-this-song-screenshot.png)
 
-[LIRI Bot deployed page](https://djgoldstone.github.io/xxx)
 
 ___
 
