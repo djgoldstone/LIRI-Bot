@@ -27,7 +27,6 @@ ___
 * [chalk-animation](https://www.npmjs.com/package/chalk-animation)
 
 ![Graph](images/graph.png)
-![Commits](assets/images/commits.png)
 ___
 
 ![LIRI Bot - error](images/error-screenshot.png)
