@@ -77,7 +77,7 @@ function concertThis(artist) {
 };
 //declared function which takes artist as an argument
 //stored query url in a variable and added artist variable to query
-//iterated through response with a for loop to display 5 results including venue, location, and date
+//iterated through response with a for loop to display 3 results including venue, location, and date
 
 function spotifySongSearch(song) {
 spotify.search({ type: "track", query: song, limit: 1 }).then(function(response) {
