@@ -22,6 +22,9 @@ ___
 * [OMDB API](http://www.omdbapi.com/)
 * [Bands In Town API](https://app.swaggerhub.com/apis-docs/Bandsintown/PublicAPI/3.0.0)
 * [Axios](https://github.com/axios/axios)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [chalk](https://www.npmjs.com/package/chalk)
+* [chalk-animation](https://www.npmjs.com/package/chalk-animation)
 
 ![Graph](images/graph.png)
 ![Commits](assets/images/commits.png)
