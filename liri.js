@@ -29,6 +29,11 @@ switch (command) {
             movieThis("Mr. Nobody");
         }
     break;
+    case ("concert-this"):
+        if (args.length > 0) {
+            concertThis(args);
+        }
+    break;
     case ("do-what-it-says"):
         doWhatItSays();
     break;
@@ -38,6 +43,35 @@ switch (command) {
 //switch statement that determines if a command has been issued and calls the corresponding function
 //Added a case to switch statement to account for movie-this command that takes in args as the argument to the movieThis function, if no arugment is provided it will default to Mr. Nobody.
 
+function concertThis(artist) {
+    var URL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+    axios.get(URL).then(
+  function(response) {
+    //   console.log(response.data);
+      for(var i = 0; i < 5; i++) {
+        console.log("------------------------------------------");
+        console.log("Venue Name: " + response.data[i].venue.name);
+        console.log("Venue Location: " + response.data[i].venue.city + ", " + response.data[i].venue.country);
+        console.log("Date: " + response.data[i].datetime);
+        console.log("------------------------------------------");
+      }
+  })
+  .catch(function(error) {
+    if (error.response) {
+      console.log("---------------Data---------------");
+      console.log(error.response.data);
+      console.log("---------------Status---------------");
+      console.log(error.response.status);
+      console.log("---------------Status---------------");
+      console.log(error.response.headers);
+    } else if (error.request) {
+      console.log(error.request);
+    } else {
+      console.log("Error", error.message);
+    }
+    console.log(error.config);
+  });
+};
 
 function spotifySongSearch(song) {
 spotify.search({ type: "track", query: song, limit: 1 }).then(function(response) {
