@@ -20,7 +20,7 @@ ___
 * [Bands In Town API](https://app.swaggerhub.com/apis-docs/Bandsintown/PublicAPI/3.0.0)
 * [Axios](https://github.com/axios/axios)
 
-![Graph](assets/images/graph.png)
+![Graph](images/graph.png)
 ![Commits](assets/images/commits.png)
 ___
 
